@@ -34,7 +34,7 @@ export default function RecentEpisodes() {
               <img src={anime.image} alt={anime.title} />
             </Link>
             <h2>{anime.title}</h2>
-            <p>Episode ID: haha {anime.episodeId}</p>
+            <p>Episode ID: {anime.episodeId}</p>
           </div>
         ))}
       </div>
