@@ -43,7 +43,6 @@ export default function RecentEpisodes() {
                   href={{
                     pathname: `/watch/${anime.episodeId}`,
                     query: {
-                      id: anime.id,
                       episodeId: anime.episodeId,
                     },
                   }}
