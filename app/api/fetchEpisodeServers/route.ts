@@ -11,7 +11,6 @@ export async function GET(req: NextRequest) {
       { status: 400 }
     );
   }
-
   const gogoanime = new ANIME.Gogoanime();
 
   try {

@@ -10,16 +10,22 @@
   },
   "dependencies": {
     "@consumet/extensions": "^1.6.0",
+    "@nextui-org/card": "^2.0.33",
+    "@nextui-org/system": "^2.2.5",
+    "@nextui-org/theme": "^2.2.9",
+    "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "embla-carousel-react": "^8.1.6",
+    "embla-carousel-react": "^8.2.1",
+    "framer-motion": "^11.3.30",
     "http-proxy-middleware": "^3.0.0",
-    "lucide-react": "^0.400.0",
+    "lucide-react": "^0.438.0",
     "next": "^14.2.7",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.3.0",
+    "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
@@ -29,8 +35,8 @@
     "encoding": "^0.1.13",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5"
   }
 }

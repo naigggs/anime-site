@@ -1,14 +1,5 @@
 "use client";
-
-import { useState, useEffect } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function RecentEpisodes() {
@@ -17,51 +8,36 @@ export default function RecentEpisodes() {
   >([]);
 
   useEffect(() => {
-    async function fetchRecentEpisodes() {
-      const response = await fetch("/api/recentEpisodes");
+    async function fetchtopAiring() {
+      const response = await fetch("/api/fetchTopAiring");
       const data = await response.json();
       setRecentEpisodes(data.results);
-      // console.log(data);
+      console.log(data);
     }
 
-    fetchRecentEpisodes();
+    fetchtopAiring();
   }, []);
-
   return (
-    <Carousel
-      opts={{
-        align: "start",
-      }}
-      className="w-full"
-    >
-      <CarouselContent>
+    <div>
+      Recent Episodes
+      <div>
         {recentEpisodes.map((anime) => (
-          <CarouselItem key={anime.id} className="basis-80 ">
-            <div className="p-1">
-              <div className="relative w-full h-96">
-                <Link
-                  href={{
-                    pathname: `/watch/${anime.episodeId}`,
-                    query: {
-                      episodeId: anime.episodeId,
-                    },
-                  }}
-                >
-                  <Image
-                    className="object-cover"
-                    src={anime.image}
-                    fill
-                    alt={anime.title}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </Link>
-              </div>
-            </div>
-          </CarouselItem>
+          <div key={anime.id} className="">
+            <Link
+              href={{
+                pathname: `/watch/${anime.id}`,
+                query: {
+                  episodeId: anime.episodeId,
+                },
+              }}
+            >
+              <img src={anime.image} alt={anime.title} />
+            </Link>
+            <h2>{anime.title}</h2>
+            <p>Episode ID: {anime.episodeId}</p>
+          </div>
         ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+      </div>
+    </div>
   );
 }

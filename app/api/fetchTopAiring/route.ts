@@ -5,8 +5,8 @@ export async function GET(req: NextRequest) {
   const gogoanime = new ANIME.Gogoanime();
 
   try {
-    const recentEpisodes = await gogoanime.fetchRecentEpisodes();
-    return NextResponse.json(recentEpisodes, { status: 200 });
+    const topAiring = await gogoanime.fetchTopAiring();
+    return NextResponse.json(topAiring, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to fetch recent episodes" },
